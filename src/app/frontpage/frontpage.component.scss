@@ -1,0 +1,54 @@
+@import "../../styles.scss";
+
+
+.container {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+}
+
+.left-side {
+    background: $kea-blue;
+    grid-column: 1 / span 4;
+    grid-row: 1 / span 8;
+    z-index: -1;
+}
+
+.right-side {
+    background: $kea-white;
+    grid-column: 5 / span 12;
+    grid-row: 1 / span 8;
+    z-index: -1;
+}
+
+
+h1 {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: calc(2rem + 2vw);
+    font-family: $kea-font;
+}
+
+.left-title {
+    color: $kea-white;
+    grid-column: 4;
+    grid-row: 2;
+    justify-self: end;
+    z-index: 1;
+}
+
+.right-title {
+    color: $kea-blue;
+    grid-column: 5 / span 8;
+    grid-row: 2;
+    z-index: 1;
+}
+
+.login {
+    grid-column-start: 6;
+    grid-column-end: 10;
+    grid-row-start: 4;
+    grid-row-end: 8; 
+}

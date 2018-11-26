@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+
+$kea-red: #ff5338;
+$kea-white: #ebebeb;
+$kea-blue: #223147;
+$kea-font: 'Cousine', monospace;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    box-sizing: border-box;
+    letter-spacing: 1px;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
