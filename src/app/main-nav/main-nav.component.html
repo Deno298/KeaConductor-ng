@@ -1,0 +1,42 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav 
+      #drawer 
+      class="sidenav" 
+      fixedInViewport="false"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="!(isHandset$ | async)">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="#">Conduct</a>
+      <a mat-list-item href="#">Train</a>
+      <a mat-list-item href="#">Map</a>
+      <a mat-list-item href="#">Map</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar>
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <i class="material-icons" id="app-icon">
+          train
+          </i>
+          <span class="app-title">Keaconductor</span>
+          <span class="fill-space"></span>
+          <a [routerLink]="['/user/add']" routerLinkActive="router-link-active" ><span class="nav-item">Conduct</span></a>
+          <span class="nav-item">Trains</span>
+          <a routerLink='user' routerLinkActive="router-link-active"><span class="nav-item">Users</span></a>
+          <span class="nav-item">Map</span>
+          <i class="material-icons nav-icon">
+              account_circle
+              </i>
+    </mat-toolbar>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

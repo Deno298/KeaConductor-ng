@@ -26,10 +26,7 @@ export class LoginComponent implements OnInit {
 
     if (loginForm.valid) {
       const user = loginForm.value as User;
-      console.log(user);
-      console.log(loginForm);
       this.userService.login(user).subscribe(response => {
-        console.log(response.status);
         if (response.status === 200) {
           this.router.navigate(['/dashboard']);
         }

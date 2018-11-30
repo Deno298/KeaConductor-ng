@@ -1,0 +1,18 @@
+<form novalidate [formGroup]="addUserForm" (ngSubmit)="onSubmit(addUserForm)">
+  <div class="example-container">
+    <mat-form-field>
+      <input type="text" formControlName="firstName" matInput placeholder="First name">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input type="text" formControlName="lastName" matInput placeholder="Last name">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input type="text" formControlName="email" matInput placeholder="Email">
+    </mat-form-field>
+
+    <button type="submit" id="login_button" [disabled]="!addUserForm.valid" mat-raised-button>Submit</button>
+
+  </div>
+</form>

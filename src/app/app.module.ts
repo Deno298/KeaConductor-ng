@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material';
-import {MatButtonModule} from '@angular/material';
+import {MatButtonModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule} from '@angular/material';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -12,13 +12,25 @@ import { FrontpageComponent } from './frontpage/frontpage.component';
 import { LoginComponent } from './login/login.component';
 import { HttpClientModule} from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { MainNavComponent } from './main-nav/main-nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { UserComponent } from './user/user.component';
+import { AddUserComponent } from './add-user/add-user.component';
+import { UsersInterfaceComponent } from './users-interface/users-interface.component';
+import {MatDividerModule} from '@angular/material/divider';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     FrontpageComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    MainNavComponent,
+    UserComponent,
+    AddUserComponent,
+    UsersInterfaceComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +40,13 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MatInputModule,
     MatButtonModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
