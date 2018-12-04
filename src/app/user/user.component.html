@@ -1,7 +1,8 @@
 <div class="container">
-  <button routerLink="add" routerLinkActive="active" mat-raised-button color="primary" id="nav-button-create">Create</button>
-  <button routerLink="interface" routerLinkActive="active" mat-raised-button color="primary" id="nav-button-retrieve">Retrieve</button>
-  <div class="component-container">
-    <router-outlet></router-outlet>
+  <div class="button-container">
+    <div id="flex-spacer"></div>
+    <button routerLink="add" routerLinkActive="active" mat-raised-button color="primary" id="nav-button-create">Create</button>
+    <button routerLink="interface" routerLinkActive="active" mat-raised-button color="primary" id="nav-button-retrieve">Retrieve</button>
   </div>
+    <router-outlet></router-outlet>
 </div>

@@ -5,12 +5,29 @@ import { FrontpageComponent } from '../app/frontpage/frontpage.component';
 import { UserComponent } from '../app/user/user.component';
 import { AddUserComponent } from '../app/add-user/add-user.component';
 import { UsersInterfaceComponent} from '../app/users-interface/users-interface.component';
+import { TrainComponent } from '../app/train/train.component';
+import { AddTrainComponent  } from '../app/add-train/add-train.component';
+import { TrainInterfaceComponent } from '../app/train-interface/train-interface.component';
 
 const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
     children: [
+      {
+        path: 'train',
+        component: TrainComponent,
+        children: [
+          {
+            path: 'add',
+            component: AddTrainComponent,
+          },
+          {
+            path: 'interface',
+            component: TrainInterfaceComponent,
+          }
+        ]
+      },
       {
         path: 'user',
         component: UserComponent,
@@ -21,7 +38,7 @@ const routes: Routes = [
           },
           {
             path: 'interface',
-            component: UsersInterfaceComponent
+            component: UsersInterfaceComponent,
           }
         ]
       }

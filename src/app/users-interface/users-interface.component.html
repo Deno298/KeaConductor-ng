@@ -1,8 +1,48 @@
 <div>
-  <h5 id="title">All Users</h5>
-  <mat-divider></mat-divider>
-  <div *ngFor="let user of users" class="user-list">
-    <span>{{user.email}}</span>
+  <div id="headline">
+    <h3 id="title">All Users</h3>
+    <mat-divider class="divider"></mat-divider>
+  </div>
+  <div class="card-container">
+    <div *ngFor="let user of users" class="user-list">
+      <mat-expansion-panel class="user-card">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Name:
+          </mat-panel-title>
+          <mat-panel-description>
+            {{user.firstName}} {{user.lastName}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <form [formGroup]="updateForm">
+        <mat-form-field>
+          <input type="text" formControlName="email" matInput placeholder="{{user.email}}">
+        </mat-form-field>
+        <div *ngIf=" updateForm.controls.email.errors?.required " class="error-message">
+            Email must be filled out anew.
+          </div>
+
+        <mat-form-field>
+          <input type="text" formControlName="firstName" matInput placeholder="{{user.firstName}}">
+        </mat-form-field>
+        <div *ngIf=" updateForm.controls.firstName.errors?.required " class="error-message">
+          First name must be filled out anew.
+        </div>
+
+        <mat-form-field>
+          <input type="text" formControlName="lastName" matInput placeholder="{{user.lastName}}">
+        </mat-form-field>
+      </form>
+      <div *ngIf=" updateForm.controls.lastName.errors?.required " class="error-message">
+          Last name must be filled out anew.
+        </div>
+
+        <mat-action-row>
+          <button mat-raised-button color="warn" (click)="deleteUser(user.email)">Delete</button>
+          <button mat-raised-button color="primary" [disabled]="!updateForm.valid" (click)="updateUser(user.email, updateForm)">Update</button>
+        </mat-action-row>
+      </mat-expansion-panel>
+    </div>
   </div>
 </div>
-
