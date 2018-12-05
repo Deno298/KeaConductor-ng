@@ -1,3 +1,26 @@
-<p>
-  train-interface works!
-</p>
+<div>
+  <div id="headline">
+    <h3 id="title">Trains</h3>
+    <mat-divider class="divider"></mat-divider>
+  </div>
+  <div class="card-container">
+    <div *ngFor="let train of trains" class="train-list">
+      <mat-card class="train-card">
+        <mat-card-header>
+          <mat-card-title class="train-title">{{train.name}}</mat-card-title>
+          <div class="fill"></div>
+              <button mat-raised-button color="accent" id="edit-button">Edit</button>
+        </mat-card-header>
+        <img mat-card-image src="/assets/img/dan-paul-97267-unsplash.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <p>Loco Address: {{train.locoAddress}}</p>
+          <p>Length: {{train.length}}</p>
+          <p>Carts: {{train.carts}}</p>
+          <mat-divider></mat-divider>
+          <p id="description">{{train.description}}
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

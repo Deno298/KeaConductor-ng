@@ -17,12 +17,15 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { UserComponent } from './user/user.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { UsersInterfaceComponent } from './users-interface/users-interface.component';
-import {MatDividerModule} from '@angular/material/divider';
-import {MatCardModule} from '@angular/material/card';
-import {MatExpansionModule} from '@angular/material/expansion';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatCardModule } from '@angular/material/card';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { TrainComponent } from './train/train.component';
 import { AddTrainComponent } from './add-train/add-train.component';
 import { TrainInterfaceComponent } from './train-interface/train-interface.component';
+import { MatSelectModule} from '@angular/material/select';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+
 
 
 
@@ -57,7 +60,9 @@ import { TrainInterfaceComponent } from './train-interface/train-interface.compo
     MatListModule,
     MatDividerModule,
     MatCardModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatSelectModule,
+    MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

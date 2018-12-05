@@ -1,22 +1,35 @@
 <div id="headline">
-  <h3>Register a new user</h3>
+  <h3>Add a new train</h3>
+  <mat-divider class="divider"></mat-divider>
 </div>
 <div class="container">
-  <form novalidate [formGroup]="addUserForm">
+  <form novalidate [formGroup]="addTrainForm" (ngSubmit)="createTrain(addTrainForm)">
     <div class="form-container">
       <mat-form-field>
-        <input type="text" formControlName="firstName" matInput placeholder="First name">
+        <input type="text" formControlName="name" matInput placeholder="Name">
       </mat-form-field>
 
       <mat-form-field>
-        <input type="text" formControlName="lastName" matInput placeholder="Last name">
+          <input type="number" formControlName="locoAddress" matInput placeholder="Loco Address">
+        </mat-form-field>
+
+      <mat-form-field>
+        <input type="text" formControlName="length" matInput placeholder="Length">
+        <span matSuffix>Centimeters</span>
       </mat-form-field>
 
       <mat-form-field>
-        <input type="text" formControlName="email" matInput placeholder="Email">
+        <textarea matInput formControlName="description" placeholder="Description" cdkTextareaAutosize #autosize="cdkTextareaAutosize"
+          cdkAutosizeMinRows="2" cdkAutosizeMaxRows="5"></textarea>
       </mat-form-field>
 
-      <button type="submit" id="login_button" [disabled]="!addUserForm.valid" mat-raised-button>Submit</button>
+      <mat-form-field>
+          <input type="number" formControlName="carts" matInput placeholder="Number of carts train can carry">
+          <span matSuffix>Carts</span>
+        </mat-form-field>
+
+
+      <button type="submit" id="login_button" [disabled]="!addTrainForm.valid" mat-raised-button>Submit</button>
 
     </div>
   </form>
