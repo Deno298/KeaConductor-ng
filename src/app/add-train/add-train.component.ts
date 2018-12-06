@@ -11,6 +11,7 @@ import { TrainService } from '../services/train.service';
 export class AddTrainComponent implements OnInit {
 
   addTrainForm: any;
+  photoFile: File;
 
   constructor(private fb: FormBuilder, private trainService: TrainService) { }
 
@@ -26,8 +27,13 @@ export class AddTrainComponent implements OnInit {
 
   createTrain(addTrainForm) {
 
-    const train = addTrainForm.value as Train;
-    console.log(train);
+    const train = new FormData();
+    train.append('photo', this.photoFile);
+    train.append('locoAddress', addTrainForm.value.locoAddress);
+    train.append('length', addTrainForm.value.length);
+    train.append('carts', addTrainForm.value.carts);
+    train.append('name', addTrainForm.value.name);
+    train.append('description', addTrainForm.value.description);
     this.trainService.addTrain(train)
       .subscribe( response => {
         console.log(response.status);
@@ -35,7 +41,10 @@ export class AddTrainComponent implements OnInit {
           console.log('Train created');
         }
       });
+  }
 
+  onFileChanged(event) {
+    this.photoFile = event.target.files[0];
   }
 
 }

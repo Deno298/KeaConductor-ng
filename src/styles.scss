@@ -4,6 +4,7 @@
 $kea-red: #ff5338;
 $kea-white: #ebebeb;
 $kea-blue: #223147;
+$kea-green: #1ab0a3;
 $kea-font: 'Cousine', monospace;
 
 html {
@@ -12,4 +13,4 @@ html {
 }
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: $kea-font, "Helvetica Neue", sans-serif; }

@@ -23,8 +23,9 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { TrainComponent } from './train/train.component';
 import { AddTrainComponent } from './add-train/add-train.component';
 import { TrainInterfaceComponent } from './train-interface/train-interface.component';
-import { MatSelectModule} from '@angular/material/select';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatFileUploadModule} from 'angular-material-fileupload';
 
 
 
@@ -62,7 +63,8 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     MatCardModule,
     MatExpansionModule,
     MatSelectModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatFileUploadModule
   ],
   providers: [],
   bootstrap: [AppComponent]

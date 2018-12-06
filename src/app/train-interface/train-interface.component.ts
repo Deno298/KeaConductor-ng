@@ -24,4 +24,5 @@ export class TrainInterfaceComponent implements OnInit {
           console.log(trains);
           this.trains = trains;
         });
+  }
 }

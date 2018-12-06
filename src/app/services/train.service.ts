@@ -12,7 +12,7 @@ export class TrainService {
 
   constructor(private http: HttpClient) { }
 
-  addTrain(train: Train): Observable<any> {
+  addTrain(train): Observable<any> {
     return this.http.post<any>(`${this.baseUrl}/create-train`, train);
   }
 

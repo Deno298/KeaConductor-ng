@@ -10,8 +10,8 @@
       </mat-form-field>
 
       <mat-form-field>
-          <input type="number" formControlName="locoAddress" matInput placeholder="Loco Address">
-        </mat-form-field>
+        <input type="number" formControlName="locoAddress" matInput placeholder="Loco Address">
+      </mat-form-field>
 
       <mat-form-field>
         <input type="text" formControlName="length" matInput placeholder="Length">
@@ -20,17 +20,19 @@
 
       <mat-form-field>
         <textarea matInput formControlName="description" placeholder="Description" cdkTextareaAutosize #autosize="cdkTextareaAutosize"
-          cdkAutosizeMinRows="2" cdkAutosizeMaxRows="5"></textarea>
+          cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5"></textarea>
       </mat-form-field>
 
       <mat-form-field>
-          <input type="number" formControlName="carts" matInput placeholder="Number of carts train can carry">
-          <span matSuffix>Carts</span>
-        </mat-form-field>
+        <input type="number" formControlName="carts" matInput placeholder="Number of carts train can carry">
+        <span matSuffix>Carts</span>
+      </mat-form-field>
 
-
-      <button type="submit" id="login_button" [disabled]="!addTrainForm.valid" mat-raised-button>Submit</button>
-
+      <div>
+          <label for="singleFile">Upload photo: </label>
+          <input id="singleFile" type="file" name="uploadedFile" (change)="onFileChanged($event)">
+        <button type="submit" id="login_button" [disabled]="!addTrainForm.valid" mat-raised-button>Submit</button>
+      </div>
     </div>
   </form>
 </div>
