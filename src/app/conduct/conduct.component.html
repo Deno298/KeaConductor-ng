@@ -5,7 +5,7 @@
         <input id="trackOrSignalInput" matInput placeholder="Signal or track address">
       </mat-form-field>
       <button mat-raised-button color="primary" id="straight-green">Straight/Green</button>
-      <button mat-raised-button id="turn-red">Turn/Red</button>
+      <button mat-raised-button color="warn" id="turn-red">Turn/Red</button>
     </mat-card>
   </div>
   <div class="conduct-container">
@@ -20,7 +20,7 @@
             <input id="loko-address" class="loko-address" matInput placeholder="Loko address">
           </mat-form-field>
 
-          <button mat-raised-button id="set-loko-address" class="set-loko-address">Set Train Address</button>
+          <button mat-raised-button color="primary" id="set-loko-address" class="set-loko-address">Set Train Address</button>
 
           <mat-divider [inset]="true"></mat-divider>
 
@@ -65,17 +65,17 @@
               <mat-icon svgIcon="horn2-on"></mat-icon>
             </button>
 
-            <button mat-raised-button id="horn2-sound-off" color="warn">
+            <button mat-raised-button id="horn2-sound-off" class="horn2-sound-off" color="warn">
               <mat-icon svgIcon="horn2-on"></mat-icon>
             </button>
           </section>
 
           <section class="button-section">
-            <button mat-raised-button id="lights-sound-on" class="lights-sound-on success">
+            <button mat-raised-button id="lights-sound-on" class="lights-on success">
               <mat-icon svgIcon="light-on"></mat-icon>
             </button>
 
-            <button mat-raised-button id="lights-sound-off" class="lights-sound-off" color="warn">
+            <button mat-raised-button id="lights-sound-off" class="lights-off" color="warn">
               <mat-icon svgIcon="light-off"></mat-icon>
             </button>
           </section>
@@ -95,7 +95,7 @@
             <input id="loko-address1" class="loko-address" matInput placeholder="Loko address">
           </mat-form-field>
 
-          <button mat-raised-button id="set-loko-address1" class="set-loko-address">Set Train Address</button>
+          <button mat-raised-button color="primary" id="set-loko-address1" class="set-loko-address">Set Train Address</button>
 
           <mat-divider [inset]="true"></mat-divider>
 
@@ -140,17 +140,17 @@
                   <mat-icon svgIcon="horn2-on"></mat-icon>
                 </button>
     
-                <button mat-raised-button id="horn2-sound-off1" color="warn">
+                <button mat-raised-button id="horn2-sound-off1" class="horn2-sound-off" color="warn">
                   <mat-icon svgIcon="horn2-on"></mat-icon>
                 </button>
               </section>
     
               <section class="button-section">
-                <button mat-raised-button id="lights-sound-on1" class="lights-sound-on success">
+                <button mat-raised-button id="lights-sound-on1" class="lights-on success">
                   <mat-icon svgIcon="light-on"></mat-icon>
                 </button>
     
-                <button mat-raised-button id="lights-sound-off1" class="lights-sound-off" color="warn">
+                <button mat-raised-button id="lights-sound-off1" class="lights-off" color="warn">
                   <mat-icon svgIcon="light-off"></mat-icon>
                 </button>
               </section>
@@ -158,6 +158,8 @@
         </mat-card-content>
       </mat-card>
     </div>
-    <div class="map-box"></div>
+    <div class="map-box">
+        <embed src="../assets/Sporplan10_SignalsIDs.pdf#toolbar=0" id="pdf-box">
+    </div>
   </div>
 </div>

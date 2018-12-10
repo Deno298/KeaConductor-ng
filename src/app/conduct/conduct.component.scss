@@ -39,6 +39,7 @@
     height: 50%;
     margin-top: 2%;
     margin-right: 2%;
+    color: white;
 }
 
 .conduct-container {
@@ -56,7 +57,9 @@
 .map-box {
     flex: 1;
     margin-right: 2%;
-    background-color: red;
+    height: 486px;
+    overflow-y: hidden;
+
 }
 
 #speed-slider {
@@ -68,9 +71,36 @@
     align-content: center;
     align-items: center;
     height: 60px;
+    justify-content: space-around;
 }
 
 .success {
     background-color: #5cb85c;
 }
 
+.loko-sound-on,
+.bell-sound-on,
+.horn1-sound-on,
+.horn2-sound-on,
+.lights-on {
+    flex: 1;
+    margin-right: 2%;
+}
+
+.loko-sound-off,
+.bell-sound-off,
+.horn1-sound-off,
+.horn2-sound-off,
+.lights-off {
+    flex: 1;
+}
+
+.set-loko-address {
+    margin-left: 2%;
+}
+
+#pdf-box {
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+}
