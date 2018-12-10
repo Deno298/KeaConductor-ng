@@ -40,7 +40,7 @@ export class ConductComponent implements OnInit {
     });
 
     $("#loko-sound-on").click(() => {
-      const url = baseUrl + "003/001/101";
+      const url = baseUrl + "003/001/001";
       console.log(url);
       $.get(url, () => {});
       $.get(url, () => {});
@@ -48,7 +48,7 @@ export class ConductComponent implements OnInit {
     });
 
     $("#loko-sound-off").click(() => {
-      const url = baseUrl + "003/001/001";
+      const url = baseUrl + "003/001/030";
       console.log(url);
       $.get(url, () => {});
       $.get(url, () => {});
@@ -113,6 +113,97 @@ export class ConductComponent implements OnInit {
 
     $("#lights-sound-off").click(() => {
       const url = baseUrl + "003/001/115";
+      console.log(url);
+      $.get(url, () => {});
+      $.get(url, () => {});
+      $.get(url, () => {});
+    });
+
+    //--------------------------------------------------------------------------------
+
+    $("#set-loko-address1").click(function() {
+      const lokoaddress = $("#loko-address1").val();
+      const url = baseUrl + "001/002/" + lokoaddress;
+      console.log(url);
+      $.get(url, () => {});
+      $.get(url, () => {});
+      $.get(url, () => {});
+    });
+
+    $("#loko-sound-on1").click(() => {
+      const url = baseUrl + "003/002/001";
+      console.log(url);
+      $.get(url, () => {});
+      $.get(url, () => {});
+      $.get(url, () => {});
+    });
+
+    $("#loko-sound-off1").click(() => {
+      const url = baseUrl + "003/002/030";
+      console.log(url);
+      $.get(url, () => {});
+      $.get(url, () => {});
+      $.get(url, () => {});
+    });
+
+    $("#bell-sound-on1").click(() => {
+      const url = baseUrl + "003/002/008";
+      console.log(url);
+      $.get(url, () => {});
+      $.get(url, () => {});
+      $.get(url, () => {});
+    });
+
+    $("#bell-sound-off1").click(() => {
+      const url = baseUrl + "003/002/123";
+      console.log(url);
+      $.get(url, () => {});
+      $.get(url, () => {});
+      $.get(url, () => {});
+    });
+
+    $("#horn1-sound-on1").click(() => {
+      const url = baseUrl + "003/002/002";
+      console.log(url);
+      $.get(url, () => {});
+      $.get(url, () => {});
+      $.get(url, () => {});
+    });
+
+    $("#horn1-sound-off1").click(() => {
+      const url = baseUrl + "003/002/129";
+      console.log(url);
+      $.get(url, () => {});
+      $.get(url, () => {});
+      $.get(url, () => {});
+    });
+
+    $("#horn2-sound-on1").click(() => {
+      const url = baseUrl + "003/002/004";
+      console.log(url);
+      $.get(url, () => {});
+      $.get(url, () => {});
+      $.get(url, () => {});
+    });
+
+    $("#horn2-sound-off1").click(() => {
+      const url = baseUrl + "003/002/127";
+      console.log(url);
+      $.get(url, () => {});
+      $.get(url, () => {});
+      $.get(url, () => {});
+    });
+
+    $("#lights-sound-on1").click(() => {
+      const url = baseUrl + "003/002/016";
+      console.log(url);
+      $.get(url, () => {});
+      $.get(url, () => {});
+      $.get(url, () => {});
+    });
+
+    $("#lights-sound-off1").click(() => {
+      const url = baseUrl + "003/002/115";
       console.log(url);
       $.get(url, () => {});
       $.get(url, () => {});
