@@ -275,6 +275,10 @@ export class ConductComponent implements OnInit {
     console.log(fullUrl);
 
     $.get(fullUrl, () => {});
+    $.get(fullUrl, () => {});
+    $.get(fullUrl, () => {});
+    $.get(fullUrl, () => {});
+    $.get(fullUrl, () => {});
   }
 
   onInputChange1(event: any) {
@@ -283,6 +287,10 @@ export class ConductComponent implements OnInit {
     const fullUrl = this.speedUrl + '002/002/' + this.speedCommandArray[speedCommand];
     console.log(fullUrl);
 
+    $.get(fullUrl, () => {});
+    $.get(fullUrl, () => {});
+    $.get(fullUrl, () => {});
+    $.get(fullUrl, () => {});
     $.get(fullUrl, () => {});
   }
 }
