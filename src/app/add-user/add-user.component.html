@@ -8,14 +8,26 @@
       <mat-form-field>
         <input type="text" formControlName="firstName" matInput placeholder="First name">
       </mat-form-field>
+      <div *ngIf="addUserForm.controls.firstName.touched && addUserForm.controls.firstName.errors?.required">
+        First name must be filled out
+      </div>
 
       <mat-form-field>
         <input type="text" formControlName="lastName" matInput placeholder="Last name">
       </mat-form-field>
+      <div *ngIf="addUserForm.controls.lastName.touched && addUserForm.controls.lastName.errors?.required" class="error">
+        Last name must be filled out
+      </div>
 
       <mat-form-field>
         <input type="text" formControlName="email" matInput placeholder="Email">
       </mat-form-field>
+      <div *ngIf="addUserForm.get('email').touched && addUserForm.get('email').errors.emailValidator">
+        Must be a valid email
+      </div>
+      <div *ngIf="addUserForm.controls.email.touched && addUserForm.controls.email.errors?.required">
+        Email must be filled out
+      </div>
 
       <button type="submit" id="login_button" [disabled]="!addUserForm.valid" mat-raised-button>Submit</button>
 

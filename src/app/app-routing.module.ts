@@ -8,6 +8,8 @@ import { UsersInterfaceComponent} from '../app/users-interface/users-interface.c
 import { TrainComponent } from '../app/train/train.component';
 import { AddTrainComponent  } from '../app/add-train/add-train.component';
 import { TrainInterfaceComponent } from '../app/train-interface/train-interface.component';
+import { DocsComponent } from '../app/docs/docs.component';
+import { ConductComponent } from '../app/conduct/conduct.component';
 
 const routes: Routes = [
   {
@@ -27,6 +29,14 @@ const routes: Routes = [
             component: TrainInterfaceComponent,
           }
         ]
+      },
+      {
+        path: 'docs',
+        component: DocsComponent
+      },
+      {
+        path: 'conduct',
+        component: ConductComponent
       },
       {
         path: 'user',

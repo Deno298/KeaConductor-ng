@@ -26,6 +26,8 @@ import { TrainInterfaceComponent } from './train-interface/train-interface.compo
 import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatFileUploadModule} from 'angular-material-fileupload';
+import { DocsComponent } from './docs/docs.component';
+import { ConductComponent } from './conduct/conduct.component';
 
 
 
@@ -44,6 +46,8 @@ import { MatFileUploadModule} from 'angular-material-fileupload';
     TrainComponent,
     AddTrainComponent,
     TrainInterfaceComponent,
+    DocsComponent,
+    ConductComponent,
   ],
   imports: [
     BrowserModule,

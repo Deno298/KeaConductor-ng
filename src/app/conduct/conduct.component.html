@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="signal-track">
+    <mat-form-field class="example-full-width">
+      <input id="trackOrSignalInput" matInput placeholder="Signal or track address">
+    </mat-form-field>
+    <button mat-raised-button color="primary" id="straight-green">Straight/Green</button>
+    <button mat-raised-button id="turn-red">Turn/Red</button>
+  </div>
+  <div class="conduct-container">
+    <div class="conduct-box">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>CONDUCT</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-form-field class="example-full-width">
+            <input id="loko-address" class="loko-address" matInput placeholder="Loko address">
+          </mat-form-field>
+          <button mat-raised-button id="set-loko-address" class="set-loko-address">Set Train Address</button>
+          <mat-divider [inset]="true"></mat-divider>
+          <p>Choo Choo: <button mat-raised-button id="loko-sound-on" class="loko-sound-on">Sound On</button>
+            <button mat-raised-button id="loko-sound-off" class="loko-sound-off">Sound Off</button> </p> 
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="map-box"></div>
+  </div>
+</div>

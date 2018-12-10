@@ -1,0 +1,32 @@
+@import "../../styles.scss";
+
+.button-container {
+    display: flex;
+    margin: 2% auto 0 auto;
+    width: 50%;
+    
+}
+
+#flex-spacer {
+    flex: 1;
+    order: 2;
+}
+
+#flex-spacer1 {
+    flex: 1;
+    order: 4;
+}
+#nav-button-signalmap {
+    flex: 1;
+    order: 1;
+}
+
+#nav-button-documentation {
+    flex: 1;
+    order: 3;
+}
+
+#nav-button-trackmap {
+    flex: 1;
+    order: 5;
+}

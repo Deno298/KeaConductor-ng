@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { User } from '../entities/User';
 import { UserService } from '../services/user.service';
 import { Router } from '@angular/router';
+import { emailValidator } from '../services/validator';
 
 @Component({
   selector: 'app-add-user',
@@ -17,9 +18,9 @@ export class AddUserComponent implements OnInit {
 
   ngOnInit() {
     this.addUserForm = this.fb.group({
-      firstName: [''],
-      lastName: [''],
-      email: ['', [Validators.required, Validators.email]]
+      firstName: ['', [Validators.required]],
+      lastName: ['', [Validators.required]],
+      email: ['', [Validators.required, emailValidator]]
     });
   }
 
