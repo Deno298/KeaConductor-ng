@@ -28,6 +28,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatFileUploadModule} from 'angular-material-fileupload';
 import { DocsComponent } from './docs/docs.component';
 import { ConductComponent } from './conduct/conduct.component';
+import { MatSliderModule } from '@angular/material/slider';
 
 
 
@@ -68,7 +69,8 @@ import { ConductComponent } from './conduct/conduct.component';
     MatExpansionModule,
     MatSelectModule,
     MatSlideToggleModule,
-    MatFileUploadModule
+    MatFileUploadModule,
+    MatSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

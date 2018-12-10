@@ -13,8 +13,11 @@
   margin-right: 2%;
   display: flex;
   justify-content: center;
-  border-style: solid;
-  border-color: grey;
+}
+
+.track-card {
+    flex: 1;
+    display: flex;
 }
 
 ::ng-deep .mat-form-field {
@@ -25,16 +28,16 @@
 
 #straight-green {
     flex: 0.3;
-    height: 38%;
+    height: 50%;
     margin-right: 5px;
-    margin-top: 2.5%;
+    margin-top: 2%;
     margin-left: 5px;
 }
 
 #turn-red {
     flex: 0.3;
-    height: 38%;
-    margin-top: 2.5%;
+    height: 50%;
+    margin-top: 2%;
     margin-right: 2%;
 }
 
@@ -55,3 +58,19 @@
     background-color: red;
     margin-right: 2%;
 }
+
+#speed-slider {
+    width: 50%;
+}
+
+.button-section {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 60px;
+}
+
+.success {
+    background-color: #5cb85c;
+}
+

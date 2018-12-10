@@ -1,59 +1,162 @@
 <div class="container">
   <div class="signal-track">
-    <mat-form-field class="example-full-width">
-      <input id="trackOrSignalInput" matInput placeholder="Signal or track address">
-    </mat-form-field>
-    <button mat-raised-button color="primary" id="straight-green">Straight/Green</button>
-    <button mat-raised-button id="turn-red">Turn/Red</button>
+    <mat-card class="track-card">
+      <mat-form-field class="example-full-width">
+        <input id="trackOrSignalInput" matInput placeholder="Signal or track address">
+      </mat-form-field>
+      <button mat-raised-button color="primary" id="straight-green">Straight/Green</button>
+      <button mat-raised-button id="turn-red">Turn/Red</button>
+    </mat-card>
   </div>
   <div class="conduct-container">
     <div class="conduct-box">
       <mat-card class="example-card">
         <mat-card-header>
-          <mat-card-title>CONDUCT</mat-card-title>
+          <mat-card-title>LOCOMOTIVE ONE</mat-card-title>
         </mat-card-header>
+
         <mat-card-content>
           <mat-form-field class="example-full-width">
             <input id="loko-address" class="loko-address" matInput placeholder="Loko address">
           </mat-form-field>
+
           <button mat-raised-button id="set-loko-address" class="set-loko-address">Set Train Address</button>
+
           <mat-divider [inset]="true"></mat-divider>
-          <p>Choo Choo: <button mat-raised-button id="loko-sound-on" class="loko-sound-on">Sound On</button>
-            <button mat-raised-button id="loko-sound-off" class="loko-sound-off">Sound Off</button> </p>
-          <p>Bell: <button mat-raised-button id="bell-sound-on" class="bell-sound-on">Sound On</button>
-            <button mat-raised-button id="bell-sound-off" class="bell-sound-off">Sound Off</button> </p>
-          <p>Horn 1: <button mat-raised-button id="horn1-sound-on" class="horn1-sound-on">Sound On</button>
-            <button mat-raised-button id="horn1-sound-off" class="horn1-sound-off">Sound Off</button> </p>
-          <p>Horn 2: <button mat-raised-button id="horn2-sound-on" class="horn2-sound-on">Sound On</button>
-            <button mat-raised-button id="horn2-sound-off" class="horn2-sound-off">Sound Off</button> </p>
-          <p>Lights: <button mat-raised-button id="lights-sound-on" class="lights-sound-on">Sound On</button>
-            <button mat-raised-button id="lights-sound-off" class="lights-sound-off">Sound Off</button> </p>
+
+        <section class="button-section">
+          <span>Reverse</span>
+          <mat-slider (input)="onInputChange($event)" id="speed-slider" max="6" value="3" step="1" tickInterval="1"></mat-slider>
+          <span>Forward</span>
+        </section>
+
+          <section class="button-section">
+            <button mat-raised-button id="loko-sound-on" class="loko-sound-on success">
+              <mat-icon svgIcon="train-sound-on"></mat-icon>
+            </button>
+
+            <button mat-raised-button id="loko-sound-off" color="warn" class="loko-sound-off">
+              <mat-icon svgIcon="train"></mat-icon>
+            </button>
+          </section>
+
+          <section class="button-section">
+            <button mat-raised-button id="bell-sound-on" class="bell-sound-on success">
+              <mat-icon svgIcon="bell-on"></mat-icon>
+            </button>
+
+            <button mat-raised-button id="bell-sound-off" color="warn" class="bell-sound-off">
+              <mat-icon svgIcon="bell-off"></mat-icon>
+            </button>
+          </section>
+
+          <section class="button-section">
+            <button mat-raised-button id="horn1-sound-on" class="horn1-sound-on success">
+              <mat-icon svgIcon="horn1-on"></mat-icon>
+            </button>
+
+            <button mat-raised-button id="horn1-sound-off" color="warn" class="horn1-sound-off">
+              <mat-icon svgIcon="horn1-off"></mat-icon>
+            </button>
+          </section>
+
+          <section class="button-section">
+            <button mat-raised-button id="horn2-sound-on" class="horn2-sound-on success">
+              <mat-icon svgIcon="horn2-on"></mat-icon>
+            </button>
+
+            <button mat-raised-button id="horn2-sound-off" color="warn">
+              <mat-icon svgIcon="horn2-on"></mat-icon>
+            </button>
+          </section>
+
+          <section class="button-section">
+            <button mat-raised-button id="lights-sound-on" class="lights-sound-on success">
+              <mat-icon svgIcon="light-on"></mat-icon>
+            </button>
+
+            <button mat-raised-button id="lights-sound-off" class="lights-sound-off" color="warn">
+              <mat-icon svgIcon="light-off"></mat-icon>
+            </button>
+          </section>
+
         </mat-card-content>
       </mat-card>
     </div>
+
     <div class="map-box">
-        <mat-card class="example-card">
-            <mat-card-header>
-              <mat-card-title>CONDUCT</mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-              <mat-form-field class="example-full-width">
-                <input id="loko-address1" class="loko-address" matInput placeholder="Loko address">
-              </mat-form-field>
-              <button mat-raised-button id="set-loko-address1" class="set-loko-address">Set Train Address</button>
-              <mat-divider [inset]="true"></mat-divider>
-              <p>Choo Choo: <button mat-raised-button id="loko-sound-on1" class="loko-sound-on">Sound On</button>
-                <button mat-raised-button id="loko-sound-off1" class="loko-sound-off">Sound Off</button> </p>
-              <p>Bell: <button mat-raised-button id="bell-sound-on1" class="bell-sound-on">Sound On</button>
-                <button mat-raised-button id="bell-sound-off1" class="bell-sound-off">Sound Off</button> </p>
-              <p>Horn 1: <button mat-raised-button id="horn1-sound-on1" class="horn1-sound-on">Sound On</button>
-                <button mat-raised-button id="horn1-sound-off1" class="horn1-sound-off">Sound Off</button> </p>
-              <p>Horn 2: <button mat-raised-button id="horn2-sound-on1" class="horn2-sound-on">Sound On</button>
-                <button mat-raised-button id="horn2-sound-off1" class="horn2-sound-off">Sound Off</button> </p>
-              <p>Lights: <button mat-raised-button id="lights-sound-on1" class="lights-sound-on">Sound On</button>
-                <button mat-raised-button id="lights-sound-off1" class="lights-sound-off">Sound Off</button> </p>
-            </mat-card-content>
-          </mat-card>
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>LOCOMOTIVE TWO</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+
+          <mat-form-field class="example-full-width">
+            <input id="loko-address1" class="loko-address" matInput placeholder="Loko address">
+          </mat-form-field>
+
+          <button mat-raised-button id="set-loko-address1" class="set-loko-address">Set Train Address</button>
+
+          <mat-divider [inset]="true"></mat-divider>
+
+          <section class="button-section">
+              <span>Reverse</span>
+              <mat-slider (input)="onInputChange1($event)" id="speed-slider" max="6" value="3" step="1" tickInterval="1"></mat-slider>
+              <span>Forward</span>
+          </section>
+    
+              <section class="button-section">
+                <button mat-raised-button id="loko-sound-on1" class="loko-sound-on success">
+                  <mat-icon svgIcon="train-sound-on"></mat-icon>
+                </button>
+    
+                <button mat-raised-button id="loko-sound-off1" color="warn" class="loko-sound-off">
+                  <mat-icon svgIcon="train"></mat-icon>
+                </button>
+              </section>
+    
+              <section class="button-section">
+                <button mat-raised-button id="bell-sound-on1" class="bell-sound-on success">
+                  <mat-icon svgIcon="bell-on"></mat-icon>
+                </button>
+    
+                <button mat-raised-button id="bell-sound-off1" color="warn" class="bell-sound-off">
+                  <mat-icon svgIcon="bell-off"></mat-icon>
+                </button>
+              </section>
+    
+              <section class="button-section">
+                <button mat-raised-button id="horn1-sound-on1" class="horn1-sound-on success">
+                  <mat-icon svgIcon="horn1-on"></mat-icon>
+                </button>
+    
+                <button mat-raised-button id="horn1-sound-off1" color="warn" class="horn1-sound-off">
+                  <mat-icon svgIcon="horn1-off"></mat-icon>
+                </button>
+              </section>
+    
+              <section class="button-section">
+                <button mat-raised-button id="horn2-sound-on1" class="horn2-sound-on success">
+                  <mat-icon svgIcon="horn2-on"></mat-icon>
+                </button>
+    
+                <button mat-raised-button id="horn2-sound-off1" color="warn">
+                  <mat-icon svgIcon="horn2-on"></mat-icon>
+                </button>
+              </section>
+    
+              <section class="button-section">
+                <button mat-raised-button id="lights-sound-on1" class="lights-sound-on success">
+                  <mat-icon svgIcon="light-on"></mat-icon>
+                </button>
+    
+                <button mat-raised-button id="lights-sound-off1" class="lights-sound-off" color="warn">
+                  <mat-icon svgIcon="light-off"></mat-icon>
+                </button>
+              </section>
+              
+        </mat-card-content>
+      </mat-card>
     </div>
   </div>
 </div>

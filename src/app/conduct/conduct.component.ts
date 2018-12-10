@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import * as $ from "jquery";
+import { MatIconRegistry } from "@angular/material/icon";
+import { DomSanitizer } from "@angular/platform-browser";
 
 @Component({
   selector: "app-conduct",
@@ -7,9 +9,59 @@ import * as $ from "jquery";
   styleUrls: ["./conduct.component.scss"]
 })
 export class ConductComponent implements OnInit {
-  constructor() {}
+
+  speedCommandArray: string[] = ['079', '074', '067', '096', '099', '106', '111'];
+  speedUrl = "http://192.168.43.195/";
+
+  constructor(
+    private matIconRegistry: MatIconRegistry,
+    private domSanitizer: DomSanitizer) {
+      this.matIconRegistry.addSvgIcon(
+        'train',
+        this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/train.svg'));
+      this.matIconRegistry.addSvgIcon(
+        'train-sound-on',
+        this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/cargo.svg'));
+      this.matIconRegistry.addSvgIcon(
+        'light-on',
+        this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/lightbulb-on.svg'));
+      this.matIconRegistry.addSvgIcon(
+        'light-off',
+        this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/light-off.svg'));
+      this.matIconRegistry.addSvgIcon(
+        'green-light',
+        this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/traffic-light-in-green.svg'));
+      this.matIconRegistry.addSvgIcon(
+        'red-light',
+        this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/traffic-light-in-red.svg'));
+      this.matIconRegistry.addSvgIcon(
+        'straight-track',
+        this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/tube-rail.svg'));
+      this.matIconRegistry.addSvgIcon(
+        'turning-track',
+        this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/rail.svg'));
+      this.matIconRegistry.addSvgIcon(
+        'bell-on',
+        this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/alarm.svg'));
+      this.matIconRegistry.addSvgIcon(
+        'bell-off',
+        this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/sound-off.svg'));
+      this.matIconRegistry.addSvgIcon(
+        'horn1-on',
+        this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/speaker.svg'));
+      this.matIconRegistry.addSvgIcon(
+        'horn1-off',
+        this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/mute.svg'));
+      this.matIconRegistry.addSvgIcon(
+        'horn2-on',
+        this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/speaker-off.svg'));
+      this.matIconRegistry.addSvgIcon(
+        'horn2-off',
+        this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/volume-off.svg'));
+    }
 
   ngOnInit() {
+
     const baseUrl = "http://192.168.43.195/";
 
     $("#straight-green").click(function() {
@@ -47,8 +99,13 @@ export class ConductComponent implements OnInit {
       $.get(url, () => {});
     });
 
+    $("#speed-slider").click(() => {
+      const speedValue = $("#speed-slider").val();
+      console.log(speedValue);
+    });
+
     $("#loko-sound-off").click(() => {
-      const url = baseUrl + "003/001/030";
+      const url = baseUrl + "003/001/130";
       console.log(url);
       $.get(url, () => {});
       $.get(url, () => {});
@@ -119,7 +176,7 @@ export class ConductComponent implements OnInit {
       $.get(url, () => {});
     });
 
-    //--------------------------------------------------------------------------------
+    // --------------------------------------------------------------------------------
 
     $("#set-loko-address1").click(function() {
       const lokoaddress = $("#loko-address1").val();
@@ -139,7 +196,7 @@ export class ConductComponent implements OnInit {
     });
 
     $("#loko-sound-off1").click(() => {
-      const url = baseUrl + "003/002/030";
+      const url = baseUrl + "003/002/130";
       console.log(url);
       $.get(url, () => {});
       $.get(url, () => {});
@@ -209,5 +266,14 @@ export class ConductComponent implements OnInit {
       $.get(url, () => {});
       $.get(url, () => {});
     });
+  }
+
+  onInputChange(event: any) {
+    const speedCommand = event.value;
+    console.log(this.speedCommandArray[speedCommand]);
+    const fullUrl = this.speedUrl + '002/001/' + this.speedCommandArray[speedCommand];
+    console.log(fullUrl);
+
+    $.get(fullUrl, () => {});
   }
 }
