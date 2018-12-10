@@ -276,4 +276,13 @@ export class ConductComponent implements OnInit {
 
     $.get(fullUrl, () => {});
   }
+
+  onInputChange1(event: any) {
+    const speedCommand = event.value;
+    console.log(this.speedCommandArray[speedCommand]);
+    const fullUrl = this.speedUrl + '002/002/' + this.speedCommandArray[speedCommand];
+    console.log(fullUrl);
+
+    $.get(fullUrl, () => {});
+  }
 }
