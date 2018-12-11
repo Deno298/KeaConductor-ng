@@ -71,12 +71,16 @@ export class ConductComponent implements OnInit {
       $.get(fullUrl, (data, status) => {});
       $.get(fullUrl, (data, status) => {});
       $.get(fullUrl, (data, status) => {});
+      $.get(fullUrl, (data, status) => {});
+      $.get(fullUrl, (data, status) => {});
     });
 
     $("#turn-red").click(function() {
       const trackOrSignalNumber = $("#trackOrSignalInput").val();
       const fullUrl = baseUrl + "004/" + trackOrSignalNumber + "/000";
 
+      $.get(fullUrl, (data, status) => {});
+      $.get(fullUrl, (data, status) => {});
       $.get(fullUrl, (data, status) => {});
       $.get(fullUrl, (data, status) => {});
       $.get(fullUrl, (data, status) => {});
@@ -89,11 +93,15 @@ export class ConductComponent implements OnInit {
       $.get(url, () => {});
       $.get(url, () => {});
       $.get(url, () => {});
+      $.get(url, () => {});
+      $.get(url, () => {});
     });
 
     $("#loko-sound-on").click(() => {
       const url = baseUrl + "003/001/001";
       console.log(url);
+      $.get(url, () => {});
+      $.get(url, () => {});
       $.get(url, () => {});
       $.get(url, () => {});
       $.get(url, () => {});
@@ -110,11 +118,15 @@ export class ConductComponent implements OnInit {
       $.get(url, () => {});
       $.get(url, () => {});
       $.get(url, () => {});
+      $.get(url, () => {});
+      $.get(url, () => {});
     });
 
     $("#bell-sound-on").click(() => {
       const url = baseUrl + "003/001/008";
       console.log(url);
+      $.get(url, () => {});
+      $.get(url, () => {});
       $.get(url, () => {});
       $.get(url, () => {});
       $.get(url, () => {});
@@ -126,11 +138,15 @@ export class ConductComponent implements OnInit {
       $.get(url, () => {});
       $.get(url, () => {});
       $.get(url, () => {});
+      $.get(url, () => {});
+      $.get(url, () => {});
     });
 
     $("#horn1-sound-on").click(() => {
       const url = baseUrl + "003/001/002";
       console.log(url);
+      $.get(url, () => {});
+      $.get(url, () => {});
       $.get(url, () => {});
       $.get(url, () => {});
       $.get(url, () => {});
@@ -142,11 +158,15 @@ export class ConductComponent implements OnInit {
       $.get(url, () => {});
       $.get(url, () => {});
       $.get(url, () => {});
+      $.get(url, () => {});
+      $.get(url, () => {});
     });
 
     $("#horn2-sound-on").click(() => {
       const url = baseUrl + "003/001/004";
       console.log(url);
+      $.get(url, () => {});
+      $.get(url, () => {});
       $.get(url, () => {});
       $.get(url, () => {});
       $.get(url, () => {});
@@ -158,6 +178,8 @@ export class ConductComponent implements OnInit {
       $.get(url, () => {});
       $.get(url, () => {});
       $.get(url, () => {});
+      $.get(url, () => {});
+      $.get(url, () => {});
     });
 
     $("#lights-sound-on").click(() => {
@@ -166,11 +188,15 @@ export class ConductComponent implements OnInit {
       $.get(url, () => {});
       $.get(url, () => {});
       $.get(url, () => {});
+      $.get(url, () => {});
+      $.get(url, () => {});
     });
 
     $("#lights-sound-off").click(() => {
       const url = baseUrl + "003/001/115";
       console.log(url);
+      $.get(url, () => {});
+      $.get(url, () => {});
       $.get(url, () => {});
       $.get(url, () => {});
       $.get(url, () => {});
@@ -185,11 +211,15 @@ export class ConductComponent implements OnInit {
       $.get(url, () => {});
       $.get(url, () => {});
       $.get(url, () => {});
+      $.get(url, () => {});
+      $.get(url, () => {});
     });
 
     $("#loko-sound-on1").click(() => {
       const url = baseUrl + "003/002/001";
       console.log(url);
+      $.get(url, () => {});
+      $.get(url, () => {});
       $.get(url, () => {});
       $.get(url, () => {});
       $.get(url, () => {});
@@ -201,11 +231,15 @@ export class ConductComponent implements OnInit {
       $.get(url, () => {});
       $.get(url, () => {});
       $.get(url, () => {});
+      $.get(url, () => {});
+      $.get(url, () => {});
     });
 
     $("#bell-sound-on1").click(() => {
       const url = baseUrl + "003/002/008";
       console.log(url);
+      $.get(url, () => {});
+      $.get(url, () => {});
       $.get(url, () => {});
       $.get(url, () => {});
       $.get(url, () => {});
@@ -217,11 +251,15 @@ export class ConductComponent implements OnInit {
       $.get(url, () => {});
       $.get(url, () => {});
       $.get(url, () => {});
+      $.get(url, () => {});
+      $.get(url, () => {});
     });
 
     $("#horn1-sound-on1").click(() => {
       const url = baseUrl + "003/002/002";
       console.log(url);
+      $.get(url, () => {});
+      $.get(url, () => {});
       $.get(url, () => {});
       $.get(url, () => {});
       $.get(url, () => {});
@@ -233,11 +271,15 @@ export class ConductComponent implements OnInit {
       $.get(url, () => {});
       $.get(url, () => {});
       $.get(url, () => {});
+      $.get(url, () => {});
+      $.get(url, () => {});
     });
 
     $("#horn2-sound-on1").click(() => {
       const url = baseUrl + "003/002/004";
       console.log(url);
+      $.get(url, () => {});
+      $.get(url, () => {});
       $.get(url, () => {});
       $.get(url, () => {});
       $.get(url, () => {});
@@ -249,6 +291,8 @@ export class ConductComponent implements OnInit {
       $.get(url, () => {});
       $.get(url, () => {});
       $.get(url, () => {});
+      $.get(url, () => {});
+      $.get(url, () => {});
     });
 
     $("#lights-sound-on1").click(() => {
@@ -257,11 +301,15 @@ export class ConductComponent implements OnInit {
       $.get(url, () => {});
       $.get(url, () => {});
       $.get(url, () => {});
+      $.get(url, () => {});
+      $.get(url, () => {});
     });
 
     $("#lights-sound-off1").click(() => {
       const url = baseUrl + "003/002/115";
       console.log(url);
+      $.get(url, () => {});
+      $.get(url, () => {});
       $.get(url, () => {});
       $.get(url, () => {});
       $.get(url, () => {});
