@@ -30,6 +30,8 @@ export class LoginComponent implements OnInit {
       this.userService.login(user).subscribe(response => {
         console.log(response);
         if (response.status === 200) {
+          console.log(response.token);
+          localStorage.setItem('access_token', response.token)
           this.router.navigate(['/dashboard']);
         }
       });

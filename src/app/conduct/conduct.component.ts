@@ -13,6 +13,14 @@ export class ConductComponent implements OnInit {
   speedCommandArray: string[] = ['079', '074', '067', '096', '099', '106', '111'];
   speedUrl = "http://192.168.43.195/";
 
+  requestSender(url) {
+    $.get(url, () => {});
+    $.get(url, () => {});
+    $.get(url, () => {});
+    $.get(url, () => {});
+    $.get(url, () => {});
+  }
+
   constructor(
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer) {
@@ -64,47 +72,30 @@ export class ConductComponent implements OnInit {
 
     const baseUrl = "http://192.168.43.195/";
 
+    
+
     $("#straight-green").click(function() {
       const trackOrSignalNumber = $("#trackOrSignalInput").val();
       const fullUrl = baseUrl + "004/" + trackOrSignalNumber + "/001";
-
-      $.get(fullUrl, (data, status) => {});
-      $.get(fullUrl, (data, status) => {});
-      $.get(fullUrl, (data, status) => {});
-      $.get(fullUrl, (data, status) => {});
-      $.get(fullUrl, (data, status) => {});
+      this.requestSender(fullUrl);
     });
 
     $("#turn-red").click(function() {
       const trackOrSignalNumber = $("#trackOrSignalInput").val();
       const fullUrl = baseUrl + "004/" + trackOrSignalNumber + "/000";
-
-      $.get(fullUrl, (data, status) => {});
-      $.get(fullUrl, (data, status) => {});
-      $.get(fullUrl, (data, status) => {});
-      $.get(fullUrl, (data, status) => {});
-      $.get(fullUrl, (data, status) => {});
+      this.requestSender(fullUrl);
     });
 
     $("#set-loko-address").click(function() {
       const lokoaddress = $("#loko-address").val();
-      const url = baseUrl + "001/001/" + lokoaddress;
-      console.log(url);
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
+      const fullUrl = baseUrl + "001/001/" + lokoaddress;
+      this.requestSender(fullUrl);
     });
 
     $("#loko-sound-on").click(() => {
-      const url = baseUrl + "003/001/001";
-      console.log(url);
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
+      const fullUrl = baseUrl + "003/001/001";
+      this.requestSender(fullUrl);
+
     });
 
     $("#speed-slider").click(() => {
@@ -113,206 +104,111 @@ export class ConductComponent implements OnInit {
     });
 
     $("#loko-sound-off").click(() => {
-      const url = baseUrl + "003/001/254";
-      console.log(url);
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
+      const fullUrl = baseUrl + "003/001/254";
+      this.requestSender(fullUrl);
     });
 
     $("#bell-sound-on").click(() => {
-      const url = baseUrl + "003/001/008";
-      console.log(url);
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
+      const fullUrl = baseUrl + "003/001/008";
+      this.requestSender(fullUrl);
+
     });
 
     $("#bell-sound-off").click(() => {
-      const url = baseUrl + "003/001/247";
-      console.log(url);
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
+      const fullUrl = baseUrl + "003/001/247";
+      this.requestSender(fullUrl);
+
     });
 
     $("#horn1-sound-on").click(() => {
-      const url = baseUrl + "003/001/002";
-      console.log(url);
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
+      const fullUrl = baseUrl + "003/001/002";
+      this.requestSender(fullUrl);
     });
 
     $("#horn1-sound-off").click(() => {
-      const url = baseUrl + "003/001/253";
-      console.log(url);
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
+      const fullUrl = baseUrl + "003/001/253";
+      this.requestSender(fullUrl);
+
     });
 
     $("#horn2-sound-on").click(() => {
-      const url = baseUrl + "003/001/004";
-      console.log(url);
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
+      const fullUrl = baseUrl + "003/001/004";
+      this.requestSender(fullUrl);
+
     });
 
     $("#horn2-sound-off").click(() => {
-      const url = baseUrl + "003/001/251";
-      console.log(url);
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
+      const fullUrl = baseUrl + "003/001/251";
+      this.requestSender(fullUrl);
+
     });
 
     $("#lights-sound-on").click(() => {
-      const url = baseUrl + "003/001/016";
-      console.log(url);
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
+      const fullUrl = baseUrl + "003/001/016";
+      this.requestSender(fullUrl);
     });
 
     $("#lights-sound-off").click(() => {
-      const url = baseUrl + "003/001/239";
-      console.log(url);
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
+      const fullUrl = baseUrl + "003/001/239";
+      this.requestSender(fullUrl);
     });
 
     // --------------------------------------------------------------------------------
 
     $("#set-loko-address1").click(function() {
       const lokoaddress = $("#loko-address1").val();
-      const url = baseUrl + "001/002/" + lokoaddress;
-      console.log(url);
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
+      const fullUrl = baseUrl + "001/002/" + lokoaddress;
+      this.requestSender(fullUrl);
     });
 
     $("#loko-sound-on1").click(() => {
-      const url = baseUrl + "003/002/001";
-      console.log(url);
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
+      const fullUrl = baseUrl + "003/002/001";
+      this.requestSender(fullUrl);
     });
 
     $("#loko-sound-off1").click(() => {
-      const url = baseUrl + "003/002/254";
-      console.log(url);
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
+      const fullUrl = baseUrl + "003/002/254";
+      this.requestSender(fullUrl);
     });
 
     $("#bell-sound-on1").click(() => {
-      const url = baseUrl + "003/002/008";
-      console.log(url);
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
+      const fullUrl = baseUrl + "003/002/008";
+      this.requestSender(fullUrl);
     });
 
     $("#bell-sound-off1").click(() => {
-      const url = baseUrl + "003/002/247";
-      console.log(url);
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
+      const fullUrl = baseUrl + "003/002/247";
+      this.requestSender(fullUrl);
     });
 
     $("#horn1-sound-on1").click(() => {
-      const url = baseUrl + "003/002/002";
-      console.log(url);
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
+      const fullUrl = baseUrl + "003/002/002";
+      this.requestSender(fullUrl);
     });
 
     $("#horn1-sound-off1").click(() => {
-      const url = baseUrl + "003/002/253";
-      console.log(url);
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
+      const fullUrl = baseUrl + "003/002/253";
+      this.requestSender(fullUrl);
     });
 
     $("#horn2-sound-on1").click(() => {
-      const url = baseUrl + "003/002/004";
-      console.log(url);
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
+      const fullUrl = baseUrl + "003/002/004";
+      this.requestSender(fullUrl);
     });
 
     $("#horn2-sound-off1").click(() => {
-      const url = baseUrl + "003/002/251";
-      console.log(url);
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
+      const fullUrl = baseUrl + "003/002/251";
+      this.requestSender(fullUrl);
     });
 
     $("#lights-sound-on1").click(() => {
-      const url = baseUrl + "003/002/016";
-      console.log(url);
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
+      const fullUrl = baseUrl + "003/002/016";
+      this.requestSender(fullUrl);
     });
 
     $("#lights-sound-off1").click(() => {
-      const url = baseUrl + "003/002/239";
-      console.log(url);
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
-      $.get(url, () => {});
+      const fullUrl = baseUrl + "003/002/239";
+      this.requestSender(fullUrl);
     });
   }
 
@@ -322,11 +218,7 @@ export class ConductComponent implements OnInit {
     const fullUrl = this.speedUrl + '002/001/' + this.speedCommandArray[speedCommand];
     console.log(fullUrl);
 
-    $.get(fullUrl, () => {});
-    $.get(fullUrl, () => {});
-    $.get(fullUrl, () => {});
-    $.get(fullUrl, () => {});
-    $.get(fullUrl, () => {});
+    this.requestSender(fullUrl);
   }
 
   onInputChange1(event: any) {
@@ -335,10 +227,7 @@ export class ConductComponent implements OnInit {
     const fullUrl = this.speedUrl + '002/002/' + this.speedCommandArray[speedCommand];
     console.log(fullUrl);
 
-    $.get(fullUrl, () => {});
-    $.get(fullUrl, () => {});
-    $.get(fullUrl, () => {});
-    $.get(fullUrl, () => {});
-    $.get(fullUrl, () => {});
+    this.requestSender(fullUrl);
   }
+  
 }
