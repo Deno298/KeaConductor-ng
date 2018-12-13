@@ -5,7 +5,8 @@ import { MatInputModule } from '@angular/material';
 import { MatButtonModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import { JwtModule } from '@auth0/angular-jwt';
 
-import { ReactiveFormsModule } from '@angular/forms';
+
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -32,6 +33,11 @@ import { ConductComponent } from './conduct/conduct.component';
 import { MatSliderModule } from '@angular/material/slider';
 import {MatDialogModule} from '@angular/material/dialog';
 import { EditTrainComponent } from './edit-train/edit-train.component';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSortModule} from '@angular/material/sort';
+
+
 
 
 export function tokenGetter() {
@@ -79,6 +85,10 @@ export function tokenGetter() {
     MatFileUploadModule,
     MatSliderModule,
     MatDialogModule,
+    MatTableModule,
+    MatPaginatorModule,
+    FormsModule,
+    MatSortModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,

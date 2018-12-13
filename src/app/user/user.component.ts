@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-user',
@@ -7,9 +9,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userService: UserService) { }
+
+  listData: MatTableDataSource<any>;
+  displayedColumns: string[] = ['fullName', 'email', 'isActive', 'actions'];
+  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  searchKey: string;
 
   ngOnInit() {
+    this.userService.getUsers().subscribe(
+      list => {
+        const array = list.map(item => {
+          return {
+            firstName: item.firstName,
+            lastName: item.lastName,
+            email: item.email,
+            isActive: item.isActive
+          };
+        });
+        this.listData = new MatTableDataSource(array);
+        this.listData.sort = this.sort;
+        this.listData.paginator = this.paginator;
+      });
+  }
+
+  onSearchClear() {
+    this.searchKey = '';
+    this.applyFilter();
+  }
+
+  applyFilter() {
+    this.listData.filter = this.searchKey.trim().toLowerCase();
   }
 
 }

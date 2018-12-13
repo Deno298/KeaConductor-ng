@@ -1,23 +1,80 @@
 @import "../../styles.scss";
 
 .button-container {
-    display: flex;
-    margin: 2% auto 0 auto;
-    width: 50%;
-    
+  display: flex;
+  margin: 2% auto 0 auto;
+  width: 50%;
+
 }
 
 #flex-spacer {
-    flex: 1.5;
-    order: 2;
+  flex: 1.5;
+  order: 2;
 }
 
 #nav-button-create {
-    flex: 1;
-    order: 3;
+  flex: 1;
+  order: 3;
 }
 
 #nav-button-retrieve {
-    flex: 1;
-    order: 1;
+  flex: 1;
+  order: 1;
+}
+
+.hide {
+  display: none;
+}
+
+mat-footer-row mat-footer-cell {
+  justify-content: center;
+  font-style: italic;
+}
+
+/* filter controls */
+.search-div {
+  margin: 0 5% 1% 5%;
+}
+
+.search-form-field {
+  width: 60%;
+  margin-left: 1%;
+  padding-right: 2%;
+  padding-left: 2%;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  font-size: 0.65em;
+}
+.search-form-field div.mat-form-field-suffix button {
+  height: 32px;
+  width: 32px;
+}
+
+#headline {
+    display: flex;
+    margin: 0 auto 0 auto;
+    width: 50%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-transform: uppercase;
+
+}
+
+.divider {
+    width: 100%;
+    margin-bottom: 2%;
+}
+
+#user-table {
+    margin: 0 5% 0 5%;
+}
+
+#add-icon {
+    font-size: 1.5em;
+    margin-top: 2.5%;
+}
+
+#create-button{
+    text-transform: capitalize;
 }
