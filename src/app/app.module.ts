@@ -30,7 +30,6 @@ import { MatFileUploadModule } from 'angular-material-fileupload';
 import { DocsComponent } from './docs/docs.component';
 import { ConductComponent } from './conduct/conduct.component';
 import { MatSliderModule } from '@angular/material/slider';
-import { AccountDetailsComponent } from './account-details/account-details.component';
 
 export function tokenGetter() {
   return localStorage.getItem('access_token');
@@ -52,8 +51,7 @@ export function tokenGetter() {
     AddTrainComponent,
     TrainInterfaceComponent,
     DocsComponent,
-    ConductComponent,
-    AccountDetailsComponent,
+    ConductComponent
   ],
   imports: [
     BrowserModule,
