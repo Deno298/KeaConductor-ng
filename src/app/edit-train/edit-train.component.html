@@ -1,0 +1,14 @@
+<div id="headline">
+    <h3>Add a new train</h3>
+    <mat-divider class="divider"></mat-divider>
+  </div>
+  <div class="container">
+    <form novalidate [formGroup]="updateTrainForm" (ngSubmit)="updateTrain(updateTrainForm)">
+      <div class="form-container">
+        <mat-form-field>
+            <input type="text" formControlName="name" matInput placeholder="Name">
+        </mat-form-field>
+      </div>
+    </form>
+  </div>
+  

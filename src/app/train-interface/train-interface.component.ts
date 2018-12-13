@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Train } from '../entities/Train';
 import { TrainService } from '../services/train.service';
+import { EditTrainComponent } from '../edit-train/edit-train.component';
+import {MatDialog, MatDialogConfig, MAT_DIALOG_DATA} from '@angular/material';
 
 @Component({
   selector: 'app-train-interface',
@@ -9,7 +11,7 @@ import { TrainService } from '../services/train.service';
 })
 export class TrainInterfaceComponent implements OnInit {
 
-  constructor(private trainService: TrainService) { }
+  constructor(private trainService: TrainService, public dialog: MatDialog) { }
 
   trains: Train[];
 
@@ -24,5 +26,12 @@ export class TrainInterfaceComponent implements OnInit {
           console.log(trains);
           this.trains = trains;
         });
+  }
+
+  openDialog() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = '90%';
+    this.dialog.open(EditTrainComponent, dialogConfig);
   }
 }

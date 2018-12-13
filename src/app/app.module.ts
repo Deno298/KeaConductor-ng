@@ -30,6 +30,9 @@ import { MatFileUploadModule } from 'angular-material-fileupload';
 import { DocsComponent } from './docs/docs.component';
 import { ConductComponent } from './conduct/conduct.component';
 import { MatSliderModule } from '@angular/material/slider';
+import {MatDialogModule} from '@angular/material/dialog';
+import { EditTrainComponent } from './edit-train/edit-train.component';
+
 
 export function tokenGetter() {
   return localStorage.getItem('access_token');
@@ -51,7 +54,8 @@ export function tokenGetter() {
     AddTrainComponent,
     TrainInterfaceComponent,
     DocsComponent,
-    ConductComponent
+    ConductComponent,
+    EditTrainComponent
   ],
   imports: [
     BrowserModule,
@@ -74,6 +78,7 @@ export function tokenGetter() {
     MatSlideToggleModule,
     MatFileUploadModule,
     MatSliderModule,
+    MatDialogModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
@@ -82,6 +87,7 @@ export function tokenGetter() {
     })
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [EditTrainComponent]
 })
 export class AppModule { }

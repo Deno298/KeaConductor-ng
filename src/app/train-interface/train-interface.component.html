@@ -9,7 +9,7 @@
         <mat-card-header>
           <mat-card-title class="train-title">{{train.name}}</mat-card-title>
           <div class="fill"></div>
-              <button mat-raised-button id="edit-button">Edit</button>
+              <button mat-raised-button id="edit-button" (click)="openDialog()">Edit</button>
         </mat-card-header>
         <img mat-card-image src="/assets/img/{{train.photoName}}" alt="Photo of a Shiba Inu">
         <mat-card-content>

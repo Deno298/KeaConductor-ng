@@ -19,9 +19,10 @@ export class UsersInterfaceComponent implements OnInit {
 
 
   ngOnInit() {
+
     this.getUsers();
     this.updateForm = this.fb.group({
-      email: ['', Validators.required, Validators.email],
+      email: ['', [Validators.required, Validators.email]],
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       originalEmail: ['']

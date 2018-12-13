@@ -14,3 +14,8 @@ html {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: $kea-font, "Helvetica Neue", sans-serif; }
+
+.menu-button {
+    background-color: $kea-green;
+    color: white;
+}
