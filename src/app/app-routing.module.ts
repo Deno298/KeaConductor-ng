@@ -11,6 +11,7 @@ import { TrainInterfaceComponent } from '../app/train-interface/train-interface.
 import { DocsComponent } from '../app/docs/docs.component';
 import { ConductComponent } from '../app/conduct/conduct.component';
 import { AuthGuard } from '../app/services/auth.guard';
+import { AccountDetailsComponent } from '../app/account-details/account-details.component';
 
 const routes: Routes = [
   {
@@ -51,6 +52,10 @@ const routes: Routes = [
             {
               path: 'interface',
               component: UsersInterfaceComponent,
+            },
+            {
+              path: 'account',
+              component: AccountDetailsComponent
             }
           ]
         }

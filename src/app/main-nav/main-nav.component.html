@@ -33,9 +33,7 @@
           <a [routerLink]="['train/interface']" routerLinkActive="router-link-active"> <span class="nav-item">Trains</span></a>
           <a [routerLink]="['user/interface']" routerLinkActive="router-link-active"><span class="nav-item">Users</span></a>
           <a [routerLink]="['docs']" routerLinkActive="router-link-active"><span class="nav-item">Docs</span></a>
-          <i class="material-icons nav-icon">
-              account_circle
-              </i>
+          <a (click)="logout()" href><span class="nav-item-last">Logout</span></a>
     </mat-toolbar>
     <ng-content></ng-content>
   </mat-sidenav-content>

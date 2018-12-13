@@ -39,6 +39,12 @@ a {
   text-transform: uppercase;
   color: $kea-white;
 }
+.nav-item-last {
+  padding-right: 0.5em;
+  font-size: 0.75em;
+  text-transform: uppercase;
+  color: $kea-white;
+}
 
 .nav-item :hover {
   color: $kea-red;
@@ -46,7 +52,7 @@ a {
 
 .nav-icon {
   padding-right: 5px;
-  font-size: 1.65em;
+  font-size: 2.3em;
   color: $kea-white;
 }
 
@@ -58,8 +64,10 @@ a {
   font-size: 1.65em;
 }
 
+
 @media(min-width: 1000px) {
   .sidenav {
     display: none;
   }
 }
+
