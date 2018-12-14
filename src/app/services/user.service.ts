@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../entities/User';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 
 @Injectable({
@@ -11,7 +12,7 @@ export class UserService {
 
   baseUrl = 'http://localhost:3000';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   login(user: User): Observable<any> {
     return this.http.post<any>('http://localhost:3000/login', user);
@@ -37,4 +38,10 @@ export class UserService {
     const url = `${this.baseUrl}/update-user`;
     return this.http.put<any>(url, user);
   }
+
+  logout() {
+    localStorage.removeItem('access_token');
+    this.router.navigate(['frontpage']);
+  }
+
 }

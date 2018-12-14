@@ -44,7 +44,13 @@ export class UserComponent implements OnInit {
   }
 
   onDelete(email) {
-    this.userService.deleteUser(email);
+    return this.userService.deleteUser(email)
+      .subscribe(response => {
+        console.log(response.status);
+        if (response.status === 200) {
+          this.ngOnInit();
+        }
+      });
   }
 
 }

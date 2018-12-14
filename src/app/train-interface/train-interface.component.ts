@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Train } from '../entities/Train';
 import { TrainService } from '../services/train.service';
 import { EditTrainComponent } from '../edit-train/edit-train.component';
-import {MatDialog, MatDialogConfig, MAT_DIALOG_DATA} from '@angular/material';
+import { MatDialog, MatDialogConfig, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
   selector: 'app-train-interface',
