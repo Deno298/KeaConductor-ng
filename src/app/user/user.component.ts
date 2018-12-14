@@ -43,4 +43,8 @@ export class UserComponent implements OnInit {
     this.listData.filter = this.searchKey.trim().toLowerCase();
   }
 
+  onDelete(email) {
+    this.userService.deleteUser(email);
+  }
+
 }

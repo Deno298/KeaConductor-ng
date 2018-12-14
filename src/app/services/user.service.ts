@@ -25,9 +25,10 @@ export class UserService {
     return this.http.get<User[]>('http://localhost:3000/get-users');
   }
 
-  deleteUser(email: String): Observable<any> {
+  deleteUser(email: string): Observable<any> {
     console.log(email);
     const url = `${this.baseUrl}/delete-user/${email}`;
+    console.log(url);
     return this.http.delete<any>(url);
   }
 
