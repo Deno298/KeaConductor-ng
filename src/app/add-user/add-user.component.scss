@@ -2,10 +2,16 @@
     display: flex;
     margin: 0 auto 0 auto;
     width: 50%;
-    justify-content: center;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     text-transform: uppercase;
+
+}
+
+#close_button {
+    float: right;
+    margin-bottom: 0;
 
 }
 
@@ -25,6 +31,12 @@
 }
 
 #login_button {
-    width: 30%;
+    width: 20%;
     float: right;
+}
+
+#clear_button {
+    width: 20%;
+    float: right;
+    margin-right: 2%;
 }

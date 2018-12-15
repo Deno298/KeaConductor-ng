@@ -11,6 +11,7 @@ import { TrainInterfaceComponent } from '../app/train-interface/train-interface.
 import { DocsComponent } from '../app/docs/docs.component';
 import { ConductComponent } from '../app/conduct/conduct.component';
 import { AuthGuard } from '../app/services/auth.guard';
+import { TrainRedirectComponent } from '../app/train-redirect/train-redirect.component';
 
 const routes: Routes = [
   {
@@ -33,12 +34,20 @@ const routes: Routes = [
           ]
         },
         {
+          path: 'train-redirect',
+          component: TrainRedirectComponent
+        },
+        {
           path: 'docs',
           component: DocsComponent
         },
         {
           path: 'conduct',
           component: ConductComponent
+        },
+        {
+          path: 'redirect',
+          component: UsersInterfaceComponent,
         },
         {
           path: 'user',
@@ -48,10 +57,6 @@ const routes: Routes = [
               path: 'add',
               component: AddUserComponent
             },
-            {
-              path: 'interface',
-              component: UsersInterfaceComponent,
-            }
           ]
         }
       ]

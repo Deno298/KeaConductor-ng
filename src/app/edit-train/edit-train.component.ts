@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { Router} from '@angular/router';
 import { Train } from '../entities/Train';
 import { TrainService } from '../services/train.service';
+import { MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-edit-train',
@@ -10,22 +11,36 @@ import { TrainService } from '../services/train.service';
 })
 export class EditTrainComponent implements OnInit {
 
-  updateTrainForm: any;
+  photoFile: File;
 
-  constructor(private fb: FormBuilder, private trainService: TrainService) { }
+  constructor(public trainService: TrainService, private dialogRef: MatDialogRef<EditTrainComponent>, private router: Router) { }
 
   ngOnInit() {
-    this.updateTrainForm = this.fb.group({
-      locoAddress: [''],
-      length: [''],
-      carts: [''],
-      name: [''],
-      description: ['']
+
+  }
+
+  editTrain(trainForm) {
+    console.log(trainForm);
+      const train = trainForm.value as Train;
+      train.originalName = trainForm.value.name;
+      console.log(train.originalName);
+      this.trainService.updateTrain(train).subscribe();
+      this.trainService.editTrainForm.reset();
+      this.trainService.initializeFormGroup();
+      this.onClose();
+}
+
+  onFileChanged(event) {
+    this.photoFile = event.target.files[0];
+
+  }
+
+  onClose() {
+    this.trainService.editTrainForm.reset();
+    this.trainService.initializeFormGroup();
+    this.dialogRef.close();
+    this.dialogRef.afterClosed().subscribe( () => {
+      this.router.navigate(['dashboard/train-redirect']);
     });
   }
-
-  updateTrain(form) {
-    console.log(form);
-  }
-
 }

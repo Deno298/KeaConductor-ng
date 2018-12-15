@@ -2,11 +2,11 @@
 
 <div>
   <div id="headline">
-    <h3 id="title">Users</h3>
+    <h2 id="title">Users</h2>
     <mat-divider class="divider"></mat-divider>
 </div>
   <div class="search-div">
-    <button mat-raised-button>
+    <button mat-raised-button id="create-button" (click)="onCreate()">
       <mat-icon id="add-icon">add</mat-icon>CREATE
     </button>
     <mat-form-field class="search-form-field" floatLabel="never">
@@ -25,10 +25,6 @@
       <ng-container matColumnDef="email">
         <mat-header-cell *matHeaderCellDef mat-sort-header>Email</mat-header-cell>
         <mat-cell *matCellDef="let element">{{element.email}}</mat-cell>
-      </ng-container>
-      <ng-container matColumnDef="isActive">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>Is Active</mat-header-cell>
-        <mat-cell *matCellDef="let element">{{element.isActive}}</mat-cell>
       </ng-container>
       <ng-container matColumnDef="actions">
         <mat-header-cell *matHeaderCellDef></mat-header-cell>

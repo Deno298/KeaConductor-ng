@@ -44,17 +44,21 @@ img {
     font-size: 1em;
 }
 
-#edit-button {
-    font-size: 1em;
-    margin-bottom: 10px;
-    background-color: $kea-green;
-    color: $kea-white;
-}
-
 #description {
     margin-top: 20px;
 }
 
 p {
     font-size: 0.90em;
+}
+
+mat-icon {
+    font-size: 1.2em;
+    padding-bottom: 0.5em;
+}
+
+button.mat-icon-button {
+    height: 10%;
+    width: 10%;
+    
 }

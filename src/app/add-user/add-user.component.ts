@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { User } from '../entities/User';
 import { UserService } from '../services/user.service';
 import { Router } from '@angular/router';
 import { emailValidator } from '../services/validator';
+import { MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-add-user',
@@ -12,30 +13,52 @@ import { emailValidator } from '../services/validator';
 })
 export class AddUserComponent implements OnInit {
 
-  addUserForm: any;
+  addUserForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private userService: UserService, private router: Router) { }
+  constructor(
+    private fb: FormBuilder,
+    public userService: UserService,
+    private router: Router,
+    public dialogRef: MatDialogRef<AddUserComponent>) { }
 
   ngOnInit() {
-    this.addUserForm = this.fb.group({
-      firstName: ['', [Validators.required]],
-      lastName: ['', [Validators.required]],
-      email: ['', [Validators.required, emailValidator]]
-    });
   }
 
   onSubmit(addUserForm) {
 
     if (addUserForm.valid) {
-      const user = addUserForm.value as User;
-      console.log(user);
-      console.log(addUserForm);
-      this.userService.addUser(user).subscribe(response => {
-        console.log(response);
-        if (response.status === 200) {
-          this.router.navigate(['/dashboard/user/all']);
+      if (!this.userService.addUserForm.get('id').value) {
+        const user = addUserForm.value as User;
+        this.userService.addUser(user).subscribe(response => {
+          if (response.status === 401) {
+            this.userService.logout();
+          }
+        });
+      } else {
+        const user = addUserForm.value as User;
+        console.log(user);
+        this.userService.updateUser(user).subscribe(response => {
+          if (response.status === 401) {
+            this.userService.logout();
+          }
+        });
       }
+      this.userService.initializeFormGroup();
+      this.onClose();
+    }
+  }
+
+  onClear() {
+    this.userService.addUserForm.reset();
+    this.userService.initializeFormGroup();
+  }
+
+  onClose() {
+    this.userService.addUserForm.reset();
+    this.userService.initializeFormGroup();
+    this.dialogRef.close();
+    this.dialogRef.afterClosed().subscribe( () => {
+      this.router.navigate(['dashboard/redirect']);
     });
   }
-}
 }

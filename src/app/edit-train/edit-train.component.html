@@ -1,13 +1,40 @@
+<button id="close_button" mat-icon-button (click)="onClose()" tabindex="-1"><mat-icon class="small">clear</mat-icon></button>
 <div id="headline">
-    <h3>Add a new train</h3>
+    <h3>Update train info</h3>
     <mat-divider class="divider"></mat-divider>
   </div>
   <div class="container">
-    <form novalidate [formGroup]="updateTrainForm" (ngSubmit)="updateTrain(updateTrainForm)">
+    <form novalidate [formGroup]="trainService.editTrainForm" (ngSubmit)="editTrain(trainService.editTrainForm)">
       <div class="form-container">
+        
         <mat-form-field>
-            <input type="text" formControlName="name" matInput placeholder="Name">
+          <input type="text" formControlName="name" matInput placeholder="Name">
         </mat-form-field>
+  
+        <mat-form-field>
+          <input type="number" formControlName="locoAddress" matInput placeholder="Loco Address">
+        </mat-form-field>
+  
+        <mat-form-field>
+          <input type="text" formControlName="length" matInput placeholder="Length">
+          <span matSuffix>Centimeters</span>
+        </mat-form-field>
+  
+        <mat-form-field>
+          <textarea matInput formControlName="description" placeholder="Description" cdkTextareaAutosize #autosize="cdkTextareaAutosize"
+            cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5"></textarea>
+        </mat-form-field>
+  
+        <mat-form-field>
+          <input type="number" formControlName="carts" matInput placeholder="Number of carts train can carry">
+          <span matSuffix>Carts</span>
+        </mat-form-field>
+  
+        <div>
+            <label for="singleFile">Upload photo: </label>
+            <input id="singleFile" type="file" name="uploadedFile" (change)="onFileChanged($event)">
+          <button type="submit" id="login_button" [disabled]="!trainService.editTrainForm.valid" mat-raised-button>Submit</button>
+        </div>
       </div>
     </form>
   </div>

@@ -33,7 +33,7 @@ mat-footer-row mat-footer-cell {
 
 /* filter controls */
 .search-div {
-  margin: 0 5% 1% 5%;
+  margin: 0 5% 0.5% 5%;
 }
 
 .search-form-field {
@@ -76,5 +76,6 @@ mat-footer-row mat-footer-cell {
 }
 
 #create-button{
-    text-transform: capitalize;
+    background-color: $kea-green;
+    color: white;
 }

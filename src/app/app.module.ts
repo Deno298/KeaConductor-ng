@@ -36,6 +36,7 @@ import { EditTrainComponent } from './edit-train/edit-train.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
+import { TrainRedirectComponent } from './train-redirect/train-redirect.component';
 
 
 
@@ -61,7 +62,8 @@ export function tokenGetter() {
     TrainInterfaceComponent,
     DocsComponent,
     ConductComponent,
-    EditTrainComponent
+    EditTrainComponent,
+    TrainRedirectComponent
   ],
   imports: [
     BrowserModule,
@@ -98,6 +100,6 @@ export function tokenGetter() {
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [EditTrainComponent]
+  entryComponents: [EditTrainComponent, AddUserComponent]
 })
 export class AppModule { }

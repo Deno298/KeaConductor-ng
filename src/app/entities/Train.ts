@@ -5,4 +5,5 @@ export class Train {
     carts: number;
     description: string;
     photoName: string;
+    originalName: string;
 }
