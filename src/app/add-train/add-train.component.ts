@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Train } from '../entities/Train';
 import { TrainService } from '../services/train.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-train',
@@ -13,7 +14,7 @@ export class AddTrainComponent implements OnInit {
   addTrainForm: any;
   photoFile: File;
 
-  constructor(private fb: FormBuilder, private trainService: TrainService) { }
+  constructor(private fb: FormBuilder, private trainService: TrainService, private router: Router) { }
 
   ngOnInit() {
     this.addTrainForm = this.fb.group({
@@ -39,6 +40,7 @@ export class AddTrainComponent implements OnInit {
         console.log(response.status);
         if(response.status === 200) {
           console.log('Train created');
+          this.router.navigate(['dashboard/train/interface']);
         }
       });
   }

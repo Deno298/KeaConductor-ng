@@ -1,6 +1,6 @@
-import { Component, OnInit } from "@angular/core";
-import * as $ from "jquery";
-import { MatIconRegistry } from "@angular/material/icon";
+import { Component, OnInit } from '@angular/core';
+import * as $ from 'jquery';
+import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from "@angular/platform-browser";
 
 @Component({
@@ -14,6 +14,7 @@ export class ConductComponent implements OnInit {
   speedUrl = "http://192.168.43.195/";
 
   requestSender(url) {
+    console.log(url);
     $.get(url, () => {});
     $.get(url, () => {});
     $.get(url, () => {});
@@ -71,8 +72,6 @@ export class ConductComponent implements OnInit {
   ngOnInit() {
 
     const baseUrl = "http://192.168.43.195/";
-
-    
 
     $("#straight-green").click(function() {
       const trackOrSignalNumber = $("#trackOrSignalInput").val();
@@ -229,5 +228,4 @@ export class ConductComponent implements OnInit {
 
     this.requestSender(fullUrl);
   }
-  
 }
