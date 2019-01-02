@@ -76,7 +76,11 @@ export class ConductComponent implements OnInit {
     $("#straight-green").click(function() {
       const trackOrSignalNumber = $("#trackOrSignalInput").val();
       const fullUrl = baseUrl + "004/" + trackOrSignalNumber + "/001";
-      this.requestSender(fullUrl);
+    $.get(fullUrl, () => {});
+    $.get(fullUrl, () => {});
+    $.get(fullUrl, () => {});
+    $.get(fullUrl, () => {});
+    $.get(fullUrl, () => {});
     });
 
     $("#turn-red").click(function() {
@@ -88,7 +92,11 @@ export class ConductComponent implements OnInit {
     $("#set-loko-address").click(function() {
       const lokoaddress = $("#loko-address").val();
       const fullUrl = baseUrl + "001/001/" + lokoaddress;
-      this.requestSender(fullUrl);
+      $.get(fullUrl, () => {});
+      $.get(fullUrl, () => {});
+      $.get(fullUrl, () => {});
+      $.get(fullUrl, () => {});
+      $.get(fullUrl, () => {});
     });
 
     $("#loko-sound-on").click(() => {
@@ -157,7 +165,11 @@ export class ConductComponent implements OnInit {
     $("#set-loko-address1").click(function() {
       const lokoaddress = $("#loko-address1").val();
       const fullUrl = baseUrl + "001/002/" + lokoaddress;
-      this.requestSender(fullUrl);
+      $.get(fullUrl, () => {});
+      $.get(fullUrl, () => {});
+      $.get(fullUrl, () => {});
+      $.get(fullUrl, () => {});
+      $.get(fullUrl, () => {});
     });
 
     $("#loko-sound-on1").click(() => {

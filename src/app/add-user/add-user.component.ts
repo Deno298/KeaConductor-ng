@@ -24,14 +24,13 @@ export class AddUserComponent implements OnInit {
   }
 
   onSubmit(addUserForm) {
-
     if (addUserForm.valid) {
       if (!this.userService.addUserForm.get('id').value) {
         const user = addUserForm.value as User;
         this.userService.addUser(user).subscribe(response => {
-          if (response.status === 401) {
-            this.userService.logout();
-          }
+          // if (response.status === 401) {
+          //this.userService.logout();
+          //}
         });
       } else {
         const user = addUserForm.value as User;
@@ -56,7 +55,7 @@ export class AddUserComponent implements OnInit {
     this.userService.addUserForm.reset();
     this.userService.initializeFormGroup();
     this.dialogRef.close();
-    this.dialogRef.afterClosed().subscribe( () => {
+    this.dialogRef.afterClosed().subscribe(() => {
       this.router.navigate(['dashboard/redirect']);
     });
   }

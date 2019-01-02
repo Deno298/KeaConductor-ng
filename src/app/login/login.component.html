@@ -1,16 +1,16 @@
 <form novalidate [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)">
   <div class="example-container">
     <mat-form-field>
-      <input type="text" formControlName="email" matInput placeholder="Email"> 
+      <input type="text" id="login_email" formControlName="email" matInput placeholder="Email">
     </mat-form-field>
 
 
     <mat-form-field>
-      <input type="password" formControlName="password" matInput placeholder="Password">
+      <input type="password" id="login_password" formControlName="password" matInput placeholder="Password">
     </mat-form-field>
 
     <button type="submit" id="login_button" [disabled]="!loginForm.valid" mat-raised-button>Login</button>
 
   </div>
-  
+
 </form>
