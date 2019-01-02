@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { Validators, FormGroup } from '@angular/forms';
 import { User } from '../entities/User';
 import { UserService } from '../services/user.service';
 import { Router } from '@angular/router';
@@ -16,7 +16,6 @@ export class AddUserComponent implements OnInit {
   addUserForm: FormGroup;
 
   constructor(
-    private fb: FormBuilder,
     public userService: UserService,
     private router: Router,
     public dialogRef: MatDialogRef<AddUserComponent>) { }

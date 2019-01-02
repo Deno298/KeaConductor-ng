@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { User } from '../entities/User';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
-import { FormBuilder, Validators, FormGroup, FormControl } from '@angular/forms';
+import { Validators, FormGroup, FormControl } from '@angular/forms';
 import { emailValidator } from '../services/validator';
 
 

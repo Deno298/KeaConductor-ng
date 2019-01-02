@@ -6,12 +6,14 @@
   <form novalidate [formGroup]="addTrainForm" (ngSubmit)="createTrain(addTrainForm)">
     <div class="form-container">
       <mat-form-field>
-        <input type="text" formControlName="name" matInput placeholder="Name">
+        <input type="text" formControlName="name" matInput placeholder="Name*">
       </mat-form-field>
+      <div *ngIf="addTrainForm.controls.name.touched && addTrainForm.controls.name.dirty && addTrainForm.controls.name.errors?.required">The train has to have a name</div>
 
       <mat-form-field>
-        <input type="number" formControlName="locoAddress" matInput placeholder="Loco Address">
+        <input type="number" formControlName="locoAddress" matInput placeholder="Loco Address*">
       </mat-form-field>
+      <div *ngIf="addTrainForm.controls.locoAddress.touched && addTrainForm.controls.locoAddress.dirty &&addTrainForm.controls.locoAddress.errors?.required">The train has to have an address</div>
 
       <mat-form-field>
         <input type="text" formControlName="length" matInput placeholder="Length">
@@ -20,7 +22,8 @@
 
       <mat-form-field>
         <textarea matInput formControlName="description" placeholder="Description" cdkTextareaAutosize #autosize="cdkTextareaAutosize"
-          cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5"></textarea>
+          cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5">
+        </textarea>
       </mat-form-field>
 
       <mat-form-field>

@@ -31,11 +31,11 @@ import { MatFileUploadModule } from 'angular-material-fileupload';
 import { DocsComponent } from './docs/docs.component';
 import { ConductComponent } from './conduct/conduct.component';
 import { MatSliderModule } from '@angular/material/slider';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { EditTrainComponent } from './edit-train/edit-train.component';
-import {MatTableModule} from '@angular/material/table';
-import {MatPaginatorModule} from '@angular/material/paginator';
-import {MatSortModule} from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 import { TrainRedirectComponent } from './train-redirect/train-redirect.component';
 
 

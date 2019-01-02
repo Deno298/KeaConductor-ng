@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { Train } from '../entities/Train';
 import { TrainService } from '../services/train.service';
 import { Router } from '@angular/router';
 
@@ -18,10 +17,10 @@ export class AddTrainComponent implements OnInit {
 
   ngOnInit() {
     this.addTrainForm = this.fb.group({
-      locoAddress: [''],
+      locoAddress: ['', Validators.required],
       length: [''],
       carts: [''],
-      name: [''],
+      name: ['', Validators.required],
       description: ['']
     });
   }
