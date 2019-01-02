@@ -1,6 +1,7 @@
 import { browser, element, by } from "protractor";
 import { AppPage } from "./login.po";
 
+const uniqid = require('uniqid');
 
 
 
@@ -24,7 +25,7 @@ describe('Users view', () => {
             element(by.id("create-button")).click();
             element(by.id('createUserFirstName')).sendKeys('e2eTestFirstName');
             element(by.id('createUserLastName')).sendKeys('e2eTestLastName');
-            element(by.id('createUserEmail')).sendKeys('e2eTestEmail@mail.dk');
+            element(by.id('createUserEmail')).sendKeys(`${uniqid()}@mail.dk`);
             browser.sleep(5000);
             element(by.id("submitNewUserButton")).click();
             browser.sleep(5000);
