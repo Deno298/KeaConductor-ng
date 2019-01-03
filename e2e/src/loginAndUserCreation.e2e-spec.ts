@@ -8,10 +8,9 @@ const uniqid = require('uniqid');
 
 describe('Users view', () => {
 
-    it('should create a user and check if a new user appears', () => {
+    it('should create a user and check if the new user appears', () => {
         browser.get('/');
         let page = new AppPage();
-        //call login
         page.login();
         browser.sleep(2000);
         expect(element(by.css(".app-title")).getText()).toEqual("KEACONDUCTOR");

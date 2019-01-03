@@ -1,9 +1,6 @@
 import { browser, by, element } from 'protractor';
 
 export class AppPage {
-  navigateTo() {
-    return browser.get('/frontpage');
-  }
 
   login(): void {
     element(by.id('login_email')).sendKeys('admin@admin.dk');
