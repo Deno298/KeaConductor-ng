@@ -28,9 +28,9 @@ export class AddUserComponent implements OnInit {
       if (!this.userService.addUserForm.get('id').value) {
         const user = addUserForm.value as User;
         this.userService.addUser(user).subscribe(response => {
-          // if (response.status === 401) {
-          //this.userService.logout();
-          //}
+          if (response.status === 401) {
+            this.userService.logout();
+          }
         });
       } else {
         const user = addUserForm.value as User;
