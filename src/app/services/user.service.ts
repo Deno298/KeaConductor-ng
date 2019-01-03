@@ -67,4 +67,8 @@ export class UserService {
   populateForm(user) {
     this.addUserForm.setValue(user);
   }
+
+  searchFilter(listData, searchKey) {
+    listData.filter = searchKey.trim().toLowerCase();
+  }
 }

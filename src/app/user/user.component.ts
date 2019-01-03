@@ -3,6 +3,7 @@ import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
 import { UserService } from '../services/user.service';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { AddUserComponent } from '../add-user/add-user.component';
+import { FilterUsersPipe } from '../filter-users.pipe';
 
 @Component({
   selector: 'app-user',
@@ -11,7 +12,7 @@ import { AddUserComponent } from '../add-user/add-user.component';
 })
 export class UserComponent implements OnInit {
 
-  constructor(private userService: UserService, private dialog: MatDialog) { }
+  constructor(private userService: UserService, private dialog: MatDialog, private userPipe: FilterUsersPipe) { }
 
   listData: MatTableDataSource<any>;
   displayedColumns: string[] = ['fullName', 'email', 'actions'];
@@ -47,7 +48,7 @@ export class UserComponent implements OnInit {
   }
 
   applyFilter() {
-    this.listData.filter = this.searchKey.trim().toLowerCase();
+    this.userPipe.transform(this.listData, this.searchKey);
   }
 
   onDelete(email) {

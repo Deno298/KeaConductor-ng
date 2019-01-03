@@ -37,6 +37,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { TrainRedirectComponent } from './train-redirect/train-redirect.component';
+import { FilterUsersPipe } from './filter-users.pipe';
 
 
 
@@ -63,7 +64,8 @@ export function tokenGetter() {
     DocsComponent,
     ConductComponent,
     EditTrainComponent,
-    TrainRedirectComponent
+    TrainRedirectComponent,
+    FilterUsersPipe
   ],
   imports: [
     BrowserModule,
@@ -98,7 +100,7 @@ export function tokenGetter() {
       }
     })
   ],
-  providers: [],
+  providers: [FilterUsersPipe],
   bootstrap: [AppComponent],
   entryComponents: [EditTrainComponent, AddUserComponent]
 })
