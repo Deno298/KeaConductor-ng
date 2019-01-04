@@ -1,14 +1,8 @@
 import { FilterUsersPipe } from './filter-users.pipe';
 import { User } from './entities/User';
 import { MatTableDataSource } from '@angular/material';
-import { TestBed } from '@angular/core/testing';
 
 fdescribe('FilterUsersPipe', () => {
-  TestBed.configureTestingModule({
-    declarations: [
-      FilterUsersPipe
-    ]
-  });
 
   it('should filter users based on a searchkey', () => {
 
@@ -29,5 +23,4 @@ fdescribe('FilterUsersPipe', () => {
     expect(result.length).toBe(1);
     expect(result[0].password).toBe('tihi');
   });
-
 });
