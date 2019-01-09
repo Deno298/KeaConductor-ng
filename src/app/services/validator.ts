@@ -7,5 +7,5 @@ export function emailValidator(control: AbstractControl): {[key: string]: boolea
         if (control.value !== undefined && regEx.test(control.value)) {
             return null;
         }
-        return {'email not correct': true};
+        return {'email': true}; // Shown in error property of form
 }
