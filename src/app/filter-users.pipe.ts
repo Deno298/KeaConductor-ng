@@ -5,9 +5,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FilterUsersPipe implements PipeTransform {
 
-  transform(list: any, args?: any): any {
-
-    list.filter = args.trim().toLowerCase();
+  transform(list: any, searchKey: string): any {
+    list.filter = searchKey.trim().toLowerCase();
     const userList: any[] = list.filteredData;
     return userList;
   }
