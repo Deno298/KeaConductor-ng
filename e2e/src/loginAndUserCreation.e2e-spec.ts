@@ -1,35 +1,34 @@
 import { browser, element, by } from 'protractor';
-import { AppPage } from './login.po';
+import { AppPage } from './keaConductor.po';
+
 
 const uniqid = require('uniqid');
+const uniqueEmailPrefix = uniqid();
+
+let page = new AppPage();
 
 
+describe('Application', () => {
 
-
-describe('Users view', () => {
-
-    it('should create a user and check if the new user appears', () => {
+    it('should login', () => {
         browser.get('/');
-        let page = new AppPage();
         page.login();
         browser.sleep(2000);
         expect(element(by.css('.app-title')).getText()).toEqual('KEACONDUCTOR');
-        element(by.id('userNavButton')).click();
+    });
+
+    it('navigate to user tab', () => {
+        page.navigateToUserTab();
+        expect(element(by.id('title')).getText()).toEqual('USERS');
         browser.sleep(2000);
+    });
 
+    it('create a user and confirm creation by searching for it', () => {
+        page.createUserFromUserTab(uniqueEmailPrefix);
 
-        const uniqueEmailPrefix = uniqid();
-        element(by.id('create-button')).click();
-        element(by.id('createUserFirstName')).sendKeys('e2eTestFirstName');
-        element(by.id('createUserLastName')).sendKeys('e2eTestLastName');
-        element(by.id('createUserEmail')).sendKeys(`${uniqueEmailPrefix}@mail.dk`);
         browser.sleep(2000);
-        element(by.id('submitNewUserButton')).click();
+        page.searchForUser(uniqueEmailPrefix);
         browser.sleep(2000);
-
-        element(by.id('userSearch')).sendKeys(uniqueEmailPrefix);
-
-        browser.sleep(5000);
 
         element.all(by.css('.mat-row')).then(elementsAfter => {
             console.log(elementsAfter.length);
