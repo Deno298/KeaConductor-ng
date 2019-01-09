@@ -10,6 +10,8 @@ let page = new AppPage();
 
 describe('Application', () => {
 
+    let page = new AppPage();
+    
     it('should login', () => {
         browser.get('/');
         page.login();
