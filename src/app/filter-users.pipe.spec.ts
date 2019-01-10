@@ -9,7 +9,9 @@ fdescribe('FilterUsersPipe', () => {
 
     const users: User[] = [
       {email: 'morteno@mail.dk', firstName: 'Morten', lastName: 'Olsen', password: '123', originalEmail: 'morteno@mail.dk', isActive: true},
+      // tslint:disable-next-line:max-line-length
       {email: 'dennisp@email.dk', firstName: 'Dennis', lastName: 'Petersen', password: 'letmein', originalEmail: 'dennisp@email.dk', isActive: true},
+      // tslint:disable-next-line:max-line-length
       {email: 'christiank@mail.com', firstName: 'Christian', lastName: 'Kirschberg', password: 'hemmeligkode', originalEmail: 'christiank@mail.com', isActive: true}
     ];
 

@@ -15,7 +15,7 @@ export class AppPage {
     element(by.id('userNavButton')).click();
   }
 
-  createUserFromUserTab(emailPrefix : string): void {
+  createUserFromUserTab(emailPrefix: string): void {
         element(by.id('create-button')).click();
         element(by.id('createUserFirstName')).sendKeys('e2eTestFirstName');
         element(by.id('createUserLastName')).sendKeys('e2eTestLastName');
@@ -24,9 +24,8 @@ export class AppPage {
         element(by.id('submitNewUserButton')).click();
   }
 
-  searchForUser(searchKey : string): void {
+  searchForUser(searchKey: string): void {
     element(by.id('userSearch')).sendKeys(searchKey);
   }
-  
 
 }
