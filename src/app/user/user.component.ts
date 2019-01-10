@@ -23,12 +23,19 @@ export class UserComponent implements OnInit {
   ngOnInit() {
     this.userService.getUsers().subscribe(
       list => {
-        console.log(list)
         console.log(list.status);
         if (list.status === 200) {
-          this.listData = new MatTableDataSource(list.users);
-          this.listData.sort = this.sort;
-          this.listData.paginator = this.paginator;
+        const array = list.users.map(item => {
+          return {
+            id: item._id,
+            firstName: item.firstName,
+            lastName: item.lastName,
+            email: item.email
+          };
+        });
+        this.listData = new MatTableDataSource(array);
+        this.listData.sort = this.sort;
+        this.listData.paginator = this.paginator;
       } else if (list.status === 401) {
           this.userService.logout();
       }
